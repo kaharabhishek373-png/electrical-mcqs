@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electrical MCQs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#f2f6ff;
+      margin:0;
+      padding:0;
+    }
+    header{
+      background:#0b5ed7;
+      color:#fff;
+      padding:15px;
+      text-align:center;
+      font-size:22px;
+      font-weight:bold;
+    }
+    .container{
+      padding:15px;
+      max-width:700px;
+      margin:auto;
+    }
+    .question{
+      background:#fff;
+      padding:15px;
+      border-radius:8px;
+      margin-bottom:15px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+    .question h3{
+      margin-top:0;
+    }
+    label{
+      display:block;
+      padding:6px 0;
+      cursor:pointer;
+    }
+    button{
+      width:100%;
+      padding:10px;
+      font-size:16px;
+      background:#198754;
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover{
+      background:#157347;
+    }
+    .result{
+      margin-top:15px;
+      font-weight:bold;
+      font-size:18px;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+
+<header>⚡ Electrical MCQs Practice</header>
+
+<div class="container">
+
+  <div class="question">
+    <h3>Q1. Unit of resistance is?</h3>
+    <label><input type="radio" name="q1"> Volt</label>
+    <label><input type="radio" name="q1" data-correct="true"> Ohm</label>
+    <label><input type="radio" name="q1"> Ampere</label>
+    <label><input type="radio" name="q1"> Watt</label>
+  </div>
+
+  <div class="question">
+    <h3>Q2. SI unit of current?</h3>
+    <label><input type="radio" name="q2" data-correct="true"> Ampere</label>
+    <label><input type="radio" name="q2"> Volt</label>
+    <label><input type="radio" name="q2"> Ohm</label>
+    <label><input type="radio" name="q2"> Coulomb</label>
+  </div>
+
+  <button onclick="checkResult()">Submit</button>
+  <div class="result" id="result"></div>
+
+</div>
+
+<script>
+function checkResult(){
+  let correct = 0;
+  document.querySelectorAll('input[data-correct]').forEach(input=>{
+    if(input.checked){
+      correct++;
+    }
+  });
+  document.getElementById("result").innerText =
+    "Your Score: " + correct + " / 2";
+}
+</script>
+
+</body>
+</html>
