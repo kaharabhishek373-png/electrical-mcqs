@@ -1,119 +1,97 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Electrical MCQs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f2f6ff;
-      margin:0;
-      padding:0;
-    }
-    header{
-      background:#0b5ed7;
-      color:#fff;
-      padding:15px;
-      text-align:center;
-      font-size:22px;
-      font-weight:bold;
-    }
-    .container{
-      padding:15px;
-      max-width:700px;
-      margin:auto;
-    }
-    .question{
-      background:#fff;
-      padding:15px;
-      border-radius:8px;
-      margin-bottom:15px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    }
-    .question h3{
-      margin-top:0;
-    }
-    label{
-      display:block;
-      padding:6px 0;
-      cursor:pointer;
-    }
-    button{
-      width:100%;
-      padding:10px;
-      font-size:16px;
-      background:#198754;
-      color:#fff;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-    }
-    button:hover{
-      background:#157347;
-    }
-    .result{
-      margin-top:15px;
-      font-weight:bold;
-      font-size:18px;
-      text-align:center;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Electrical MCQs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f2f6ff;
+  margin:0;
+}
+header{
+  background:#0b5ed7;
+  color:#fff;
+  padding:15px;
+  text-align:center;
+  font-size:22px;
+}
+.container{
+  padding:15px;
+  max-width:700px;
+  margin:auto;
+}
+.question{
+  background:#fff;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+label{
+  display:block;
+  padding:6px 0;
+}
+.correct{ color:green; font-weight:bold; }
+.wrong{ color:red; font-weight:bold; }
+
+button{
+  width:100%;
+  padding:10px;
+  font-size:16px;
+  background:#198754;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+}
+.result{
+  margin-top:15px;
+  font-size:18px;
+  text-align:center;
+  font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
 <header>⚡ Electrical MCQs Practice</header>
 
 <div class="container">
 
-  <div class="question">
-    <h3>Q1. Unit of resistance is?</h3>
-    <label><input type="radio" name="q1"> Volt</label>
-    <label><input type="radio" name="q1" data-correct="true"> Ohm</label>
-    <label><input type="radio" name="q1"> Ampere</label>
-    <label><input type="radio" name="q1"> Watt</label>
-  </div>
+<div class="question">
+<h3>Q1. Unit of resistance?</h3>
+<label><input type="radio" name="q1"> Volt</label>
+<label class="correct"><input type="radio" name="q1" data-correct> Ohm</label>
+<label><input type="radio" name="q1"> Ampere</label>
+<label><input type="radio" name="q1"> Watt</label>
+</div>
 
-  <div class="question">
-    <h3>Q2. SI unit of current?</h3>
-    <label><input type="radio" name="q2" data-correct="true"> Ampere</label>
-    <label><input type="radio" name="q2"> Volt</label>
-    <label><input type="radio" name="q2"> Ohm</label>
-    <label><input type="radio" name="q2"> Coulomb</label>
-  </div>
+<div class="question">
+<h3>Q2. SI unit of current?</h3>
+<label class="correct"><input type="radio" name="q2" data-correct> Ampere</label>
+<label><input type="radio" name="q2"> Volt</label>
+<label><input type="radio" name="q2"> Ohm</label>
+<label><input type="radio" name="q2"> Coulomb</label>
+</div>
 
-  <button onclick="checkResult()">Submit</button>
-  <div class="result" id="result"></div>
+<button onclick="checkResult()">Submit</button>
+<div class="result" id="result"></div>
 
 </div>
 
 <script>
 function checkResult(){
-  let correct = 0;
-  document.querySelectorAll('input[data-correct]').forEach(input=>{
-    if(input.checked){
-      correct++;
-    }
+  let score = 0;
+  document.querySelectorAll('input[data-correct]').forEach(i=>{
+    if(i.checked) score++;
   });
   document.getElementById("result").innerText =
-    "Your Score: " + correct + " / 2";
+  "Your Score: " + score + " / 2";
 }
 </script>
 
 </body>
 </html>
-<script>
-function check() {
-  let score = 0;
-
-  if (document.querySelector('input[name="q1"]:checked')?.value === "B") score++;
-  if (document.querySelector('input[name="q2"]:checked')?.value === "B") score++;
-  if (document.querySelector('input[name="q3"]:checked')?.value === "A") score++;
-  if (document.querySelector('input[name="q4"]:checked')?.value === "B") score++;
-  if (document.querySelector('input[name="q5"]:checked')?.value === "C") score++;
-
-  document.getElementById("result").innerHTML =
-    "Your Score: " + score + " / 5";
-}
-<.correct { color: green; font-weight: bold; }
-.wrong { color: red; font-weight: bold; }>
