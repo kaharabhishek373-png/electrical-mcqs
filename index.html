@@ -1,19 +1,18 @@
  <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>Electrical MCQs</title>
+<title>Electrical MCQs Test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body{
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background:#f2f6ff;
   margin:0;
 }
 header{
   background:#0b5ed7;
-  color:#fff;
+  color:white;
   padding:15px;
   text-align:center;
   font-size:22px;
@@ -24,72 +23,72 @@ header{
   margin:auto;
 }
 .question{
-  background:#fff;
+  background:white;
   padding:15px;
   border-radius:8px;
   margin-bottom:15px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
-label{
-  display:block;
-  padding:6px 0;
-}
-.correct{ color:green; font-weight:bold; }
-.wrong{ color:red; font-weight:bold; }
-
+label{display:block;padding:5px;}
 button{
   width:100%;
   padding:10px;
-  font-size:16px;
   background:#198754;
-  color:#fff;
+  color:white;
   border:none;
+  font-size:16px;
   border-radius:5px;
 }
 .result{
-  margin-top:15px;
   font-size:18px;
   text-align:center;
-  font-weight:bold;
+  margin-top:15px;
 }
 </style>
 </head>
 
 <body>
-
-<header>⚡ Electrical MCQs Practice</header>
+<header>⚡ Electrical MCQs Online Test</header>
 
 <div class="container">
 
 <div class="question">
-<h3>Q1. Unit of resistance?</h3>
-<label><input type="radio" name="q1"> Volt</label>
-<label class="correct"><input type="radio" name="q1" data-correct> Ohm</label>
-<label><input type="radio" name="q1"> Ampere</label>
-<label><input type="radio" name="q1"> Watt</label>
+<h3>Q1. Resistance की unit क्या है?</h3>
+<label><input type="radio" name="q1" value="A"> Volt</label>
+<label><input type="radio" name="q1" value="B"> Ohm</label>
+<label><input type="radio" name="q1" value="C"> Ampere</label>
+<label><input type="radio" name="q1" value="D"> Watt</label>
 </div>
 
 <div class="question">
-<h3>Q2. SI unit of current?</h3>
-<label class="correct"><input type="radio" name="q2" data-correct> Ampere</label>
-<label><input type="radio" name="q2"> Volt</label>
-<label><input type="radio" name="q2"> Ohm</label>
-<label><input type="radio" name="q2"> Coulomb</label>
+<h3>Q2. Current की SI unit?</h3>
+<label><input type="radio" name="q2" value="A"> Volt</label>
+<label><input type="radio" name="q2" value="B"> Ampere</label>
+<label><input type="radio" name="q2" value="C"> Ohm</label>
+<label><input type="radio" name="q2" value="D"> Watt</label>
 </div>
 
-<button onclick="checkResult()">Submit</button>
+<div class="question">
+<h3>Q3. Power का formula क्या है?</h3>
+<label><input type="radio" name="q3" value="A"> V × I</label>
+<label><input type="radio" name="q3" value="B"> V / I</label>
+<label><input type="radio" name="q3" value="C"> I²R</label>
+<label><input type="radio" name="q3" value="D"> R / I</label>
+</div>
+
+<button onclick="result()">Submit Test</button>
 <div class="result" id="result"></div>
 
 </div>
 
 <script>
-function checkResult(){
-  let score = 0;
-  document.querySelectorAll('input[data-correct]').forEach(i=>{
-    if(i.checked) score++;
-  });
-  document.getElementById("result").innerText =
-  "Your Score: " + score + " / 2";
+function result(){
+let score = 0;
+if(document.querySelector('input[name="q1"]:checked')?.value==="B") score++;
+if(document.querySelector('input[name="q2"]:checked')?.value==="B") score++;
+if(document.querySelector('input[name="q3"]:checked')?.value==="A") score++;
+
+document.getElementById("result").innerHTML =
+"✅ Your Score: "+score+" / 3";
 }
 </script>
 
