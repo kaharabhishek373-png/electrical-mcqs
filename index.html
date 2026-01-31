@@ -102,3 +102,17 @@ function checkResult(){
 
 </body>
 </html>
+<script>
+function check() {
+  let score = 0;
+
+  if (document.querySelector('input[name="q1"]:checked')?.value === "B") score++;
+  if (document.querySelector('input[name="q2"]:checked')?.value === "B") score++;
+  if (document.querySelector('input[name="q3"]:checked')?.value === "A") score++;
+  if (document.querySelector('input[name="q4"]:checked')?.value === "B") score++;
+  if (document.querySelector('input[name="q5"]:checked')?.value === "C") score++;
+
+  document.getElementById("result").innerHTML =
+    "Your Score: " + score + " / 5";
+}
+</script>
